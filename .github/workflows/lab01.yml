@@ -1,0 +1,11 @@
+on:
+  issue:
+    types: [opened, closed]
+  
+jobs: 
+  issue-ops:
+    runs-on: ubuntu-latest
+    steps:
+      - uses : actions/github-script@v6
+      - run: |
+        gh issues comment ${{ github.event.issue.number }} --body "Hallo doe het chechk ff issue"
